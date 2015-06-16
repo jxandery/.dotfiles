@@ -1,0 +1,16 @@
+[user]
+	email = jack.yeh@gmail.com
+	name = Jack Yeh
+
+	username = jxandery
+	[color]
+	ui = true
+	[alias]
+	shas = log --pretty=format:\"%H\"
+	hist = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
+	authors = ! git log --format=\"%ae %an\" | sort -u | column -t
+	[push]
+	default = upstream
+	[core]
+	excludesfile = /Users/jackyeh/.gitignore_global
+	editor = atom -w
