@@ -126,6 +126,7 @@ set number                     " line numbers '(Josh Cheeks)
  map <Leader>p orequire "pry"; binding.pry<esc>
 " map <Leader>cl oconsole.log();<esc>hi
 " map <Leader>de odebugger;<esc>:w %<cr>
+map <Leader>flash o<div class="messages"><cr><% flash.each do \|name, msg\| %><cr><%= content_tag :div, msg, class: "flash-#{name}" %><cr><% end %><cr></div>
 
 " Emacs/Readline keybindings for commandline/insert mode
 " These can be helpful in insert mode for small movements as opposed to having
@@ -144,16 +145,17 @@ set number                     " line numbers '(Josh Cheeks)
 " imap <C-a> <Home>
 " imap <C-e> <End>
 map <C-i> :NERDTreeToggle<CR>
-inoremap jf <esc>
-inoremap fj <esc>
+inoremap jk <esc>
+inoremap kj <esc>
 
 " ================ Leader and other mappings =======================
 " leader map with leader commands
-let mapleader = "\<space>"
+let mapleader = "\,"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>o :CtrlP<CR>
 nmap <Leader><Leader> V
+nnoremap <Leader>i mzgg=G`z<CR>
 
 " strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
