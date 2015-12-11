@@ -20,7 +20,6 @@ alias gcv="git commit -v"
 alias readme="vim README.md"
 alias reload="source ~/.bash_profile"
 
-Team Directory
 # tmux aliases
 alias tn="tmux new -s"
 alias ta="tmux attach -t"
@@ -40,3 +39,4 @@ alias daily="cd ~/Desktop/hackers_education/Turing/daily_lessons"
 alias be="bundle exec"
 alias rspecs="rspec --require rspec/pride --format PrideFormatter"
 alias rr="rake routes"
+alias droplet="45.55.236.11" # this is your personal digital ocean droplet that Turing got from Digital Ocean. It is free as long as Digital Ocean and Turing continue the relationship.
