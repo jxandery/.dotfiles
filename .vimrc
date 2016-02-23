@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'hwartig/vim-seeing-is-believing'
 Plugin 'tpope/vim-endwise'                    " Adds end automatically to methods etc
 Plugin 'ervandew/supertab'                    " tab auto-complete for words
+
 " Easily switch between vim and tmux
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -29,7 +30,7 @@ vnoremap cc :w !pbcopy<CR><CR>
 noremap vv :r !pbpaste<CR>
 
 "hit v to select one character
-""hit v again to expand selection to word
+"hit v again to expand selection to word
 "hit v again to expand to paragraph
 "hit <c-v> go back to previous selection if i went too far
 vmap v <plug>(expand_region_expand)
@@ -67,13 +68,6 @@ Plugin 'scrooloose/nerdcommenter'
 " Plugin 'kana/vim-textobj-user' (Ben Orenstein)
 " Plugin 'nelstrom/vim-textobj-rubyblock' (Ben Orenstein)
 
-" Clojure
-" -------
-" Plugin 'guns/vim-clojure-static' (Ben Orenstein)
-" Plugin 'tpope/vim-classpath' (Ben Orenstein)
-" Plugin 'tpope/vim-fireplace' (Ben Orenstein)
-" Plugin 'tpope/vim-leiningen' (Ben Orenstein)
-
 " Colors
 Plugin 'nanotech/jellybeans.vim'
 
@@ -98,52 +92,17 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 
-" https://github.com/JoshCheek/dotfiles
-" set nobackup                  " no backup files '(Josh Cheeks)
-" set nowritebackup             " only in case you don't want a backup file while editing '(Josh Cheeks)
-set noswapfile                 " no swap files '(Josh Cheeks)
-" set scrolloff=4               " adds top/bottom buffer between cursor and window '(Josh Cheeks)
-set cursorline                 " colours the line the cursor is on '(Josh Cheeks)
-set number                     " line numbers '(Josh Cheeks)
-
-" c command mode: command terminal mode
-" n normal mode: start in vim
-"' i insert mode: insert in vim
-" v visual mode: visual mode in vim
-
 " Easier navigation between split windows
 
 " nnoremap <c-k> <c-w>k
 " nnoremap <c-h> <c-w>h
 " nnoremap <c-l> <c-w>l
 
-" rebind esc to something more easily reachable, popular alternatives are jj, jk, ii
-" imap kj <Esc>
+map <Leader>p orequire "pry"; binding.pry<esc>
 
-" leader keybinds
-" ex. for pry insertion you'd hit ,p
-" let mapleader="," " remap leader to comma
- map <Leader>p orequire "pry"; binding.pry<esc>
-" map <Leader>cl oconsole.log();<esc>hi
-" map <Leader>de odebugger;<esc>:w %<cr>
+" flash messages snippet
 map <Leader>flash o<div class="messages"><cr><% flash.each do \|name, msg\| %><cr><%= content_tag :div, msg, class: "flash-#{name}" %><cr><% end %><cr></div>
 
-" Emacs/Readline keybindings for commandline/insert mode
-" These can be helpful in insert mode for small movements as opposed to having
-" to switch back to normal mode
-"
-"navigation
-" cnoremap <C-a> <Home>
-" cnoremap <C-e> <End>
-" cnoremap <C-f> <Right>
-" cnoremap <C-b> <Left>
-" cnoremap <M-b> <S-Left>
-" cnoremap <M-f> <S-Right>
-" insert mode
-" imap <C-b> <Left>
-" imap <C-f> <Right>
-" imap <C-a> <Home>
-" imap <C-e> <End>
 map <C-i> :NERDTreeToggle<CR>
 inoremap jk <esc>
 inoremap kj <esc>
@@ -192,10 +151,5 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "========== Testing ==========
 " alias="gem 'minitest', '~> 5.2'\nrequire 'minitest/autorun'\require 'minitest/pride'i\nrequire 'pry'"
-
-" Seeing Is Believing
-nmap <buffer> <Leader>r <Plug>(seeing-is-believing-run)
-xmap <buffer> <Leader>r <Plug>(seeing-is-believing-run)
-imap <buffer> <Leader>r <Plug>(seeing-is-believing-run)
 
 set clipboard=unnamed
