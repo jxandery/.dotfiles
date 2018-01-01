@@ -82,6 +82,9 @@ syntax enable                   " enable syntax highlighting
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 
+" Show line number
+set number
+
 " Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -91,6 +94,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
+let g:ackprg = 'ag --vimgrep'
 
 " Easier navigation between split windows
 
@@ -98,7 +102,7 @@ set incsearch                   " incremental searching
 " nnoremap <c-h> <c-w>h
 " nnoremap <c-l> <c-w>l
 
-map <Leader>p orequire "pry"; binding.pry<esc>
+map <Leader>p require "pry"; binding.pry<esc>
 
 " flash messages snippet
 map <Leader>flash o<div class="messages"><cr><% flash.each do \|name, msg\| %><cr><%= content_tag :div, msg, class: "flash-#{name}" %><cr><% end %><cr></div>
